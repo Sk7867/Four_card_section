@@ -86,6 +86,7 @@ main {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+  transition: all 0.3s ease-in-out;
 }
 
 .feature_heading {
@@ -105,21 +106,49 @@ main {
   font-family: var(--font);
 }
 
+.feature_box:hover {
+  transform: scale(1.1);
+}
+
+.feature_box:hover p {
+  color: #000;
+}
+
 .supervisor {
   border-top: 4px solid var(--cyan);
+  transition: all 0.4s ease-in-out;
+}
+.feature_box:hover.supervisor {
+  border-top: 4px solid #000;
+  background-color: var(--cyan);
 }
 
 .builder {
   border-top: 4px solid var(--red);
   margin-bottom: 20px;
+  transition: all 0.4s ease-in-out;
+}
+.feature_box:hover.builder {
+  border-top: 4px solid #000;
+  background-color: var(--red);
 }
 
 .karma {
   border-top: 4px solid var(--orange);
+  transition: all 0.4s ease-in-out;
+}
+.feature_box:hover.karma {
+  border-top: 4px solid #000;
+  background-color: var(--orange);
 }
 
 .calculator {
   border-top: 4px solid var(--blue);
+  transition: all 0.4s ease-in-out;
+}
+.feature_box:hover.calculator {
+  border-top: 4px solid #000;
+  background-color: var(--blue);
 }
 
 .feature_icon {
@@ -134,7 +163,7 @@ footer {
   margin-top: 20px;
 }
 .attribution {
-  font-size: 11px;
+  font-size: 15px;
   text-align: center;
 }
 .attribution a {
