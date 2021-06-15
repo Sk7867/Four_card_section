@@ -22,14 +22,15 @@ html {
 }
 
 body {
-  width: 90%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
-  width: 100%;
-  margin: 0 auto;
+  width: 90%;
   text-align: center;
+  margin-bottom: 75px;
 }
 
 .heading {
@@ -38,7 +39,8 @@ header {
   line-height: 3.5rem;
   letter-spacing: 0.17px;
   font-family: var(--font);
-  margin: 85px auto 15px;
+  margin: 85px 0 15px 0;
+  color: var(--grayish);
 }
 
 .subheading {
@@ -50,32 +52,12 @@ header {
 .tagline {
   font-size: 1.2rem;
   color: var(--gry-blue);
-  max-width: 35.5rem;
-  margin: 15px auto 65px;
-  letter-spacing: 0.8px;
   line-height: 25px;
-  width: 100%;
   font-family: var(--font);
-  letter-spacing: 0.17px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.feature_set_1,
-.feature_set_2,
-.feature_set_3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.feature_set_2 {
-  flex-direction: column;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .feature_box {
@@ -87,6 +69,7 @@ main {
   border-radius: 10px;
   box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
   transition: all 0.3s ease-in-out;
+  margin-bottom: 24px;
 }
 
 .feature_heading {
@@ -180,40 +163,53 @@ footer {
   }
 }
 
-@media screen and (min-width: 500px) {
-  .tagline {
-    width: 33.3rem;
-    letter-spacing: -1px;
-  }
-}
-
 @media screen and (min-width: 850px) {
   .heading {
     line-height: 3.3rem;
   }
 
   main {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
   .feature_box {
-    width: 23.3rem;
-    height: 16.5rem;
-  }
-
-  .feature_set_1,
-  .feature_set_2,
-  .feature_set_3 {
-    margin: 0 20px 0;
-  }
-
-  .tagline {
-    letter-spacing: -0.8px;
+    width: 350px;
+    height: 250px;
+    margin-bottom: 0;
   }
 
   .karma {
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'aa bb cc '
+      'aa dd cc';
+    gap: 30px;
+  }
+
+  .supervisor {
+    grid-area: aa;
+    align-self: center;
+  }
+
+  .builder {
+    grid-area: bb;
+  }
+
+  .karma {
+    grid-area: dd;
+  }
+
+  .calculator {
+    grid-area: cc;
+    align-self: center;
   }
 }
